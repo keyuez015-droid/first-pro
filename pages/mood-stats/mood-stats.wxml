@@ -1,0 +1,40 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="top-title">情绪统计</text>
+      <view class="spacer"></view>
+    </view>
+  </view>
+
+  <view class="filter-row">
+    <view wx:for="{{filters}}" wx:key="id"
+      class="filter-chip tap-soft {{filter === item.id ? 'active' : ''}}"
+      data-id="{{item.id}}" bindtap="onFilter">{{item.label}}</view>
+  </view>
+
+  <view class="chart-card notebook-card animate-in">
+    <text class="chart-title">情绪占比 · 基础分 {{totalScore}}</text>
+    <canvas type="2d" id="pieCanvas" class="chart-canvas pie"></canvas>
+    <view class="legend">
+      <view wx:for="{{topMoods}}" wx:key="id" class="legend-item">
+        <view class="legend-dot" style="background:{{item.color}}"></view>
+        <text>{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="chart-card notebook-card">
+    <text class="chart-title">高频情绪 Top</text>
+    <canvas type="2d" id="barCanvas" class="chart-canvas bar"></canvas>
+  </view>
+
+  <view class="chart-card notebook-card">
+    <text class="chart-title">心情趋势</text>
+    <view class="trend-legend">
+      <text class="pos">— 积极</text>
+      <text class="neg">— 消极</text>
+    </view>
+    <canvas type="2d" id="lineCanvas" class="chart-canvas line"></canvas>
+  </view>
+</view>

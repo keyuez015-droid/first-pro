@@ -1,0 +1,60 @@
+.page { min-height: 100vh; }
+.top-bar { background: linear-gradient(180deg, #F5EDD8 0%, transparent 100%); }
+.top-inner { display: flex; align-items: center; padding: 16rpx 32rpx 24rpx; }
+.back { font-size: 48rpx; color: var(--color-ink-light); width: 60rpx; }
+.top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
+.spacer { width: 60rpx; }
+
+.player-card {
+  margin: 24rpx 32rpx;
+  padding: 40rpx 32rpx 40rpx 48rpx;
+}
+
+.sound-list { display: flex; flex-direction: column; gap: 8rpx; }
+
+.sound-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 16rpx;
+  border-radius: var(--radius-md);
+  transition: background 0.4s ease;
+}
+
+.sound-item.active {
+  background: var(--color-kraft);
+}
+
+.sound-emoji { font-size: 36rpx; margin-right: 20rpx; }
+.sound-label { flex: 1; font-size: 30rpx; letter-spacing: 2rpx; }
+
+.play-dot {
+  width: 16rpx; height: 16rpx;
+  background: var(--color-tea);
+  border-radius: 50%;
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.volume-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 16rpx 0;
+}
+
+.vol-label { font-size: 26rpx; color: var(--color-ink-light); width: 80rpx; }
+.volume-row slider { flex: 1; }
+
+.stop-btn {
+  text-align: center;
+  padding: 20rpx;
+  margin-top: 16rpx;
+  border-radius: 999rpx;
+  border: 2rpx dashed var(--color-tea-light);
+  font-size: 26rpx;
+  color: var(--color-ink-light);
+}

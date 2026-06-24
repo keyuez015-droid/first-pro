@@ -1,0 +1,21 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="top-title">解压小游戏</text>
+      <view class="spacer"></view>
+    </view>
+  </view>
+
+  <view class="game-grid">
+    <view wx:for="{{games}}" wx:key="id"
+      class="game-card notebook-card tap-soft animate-in"
+      style="animation-delay:{{index * 0.1}}s"
+      data-path="{{item.path}}"
+      bindtap="onGame">
+      <view class="game-icon" style="background:{{item.color}}"></view>
+      <text class="game-title">{{item.title}}</text>
+      <text class="game-desc">{{item.desc}}</text>
+    </view>
+  </view>
+</view>

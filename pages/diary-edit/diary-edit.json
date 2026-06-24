@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "mood-icon": "/components/mood-icon/mood-icon"
+  }
+}

@@ -1,0 +1,52 @@
+<view class="page paper-bg font-{{settings.fontSize || 'medium'}} theme-{{settings.theme === 'cool' ? 'cool' : ''}}">
+  <!-- 顶部栏 -->
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="month-switch tap-soft" bindtap="onPrevMonth">‹</view>
+      <text class="top-title">{{headerText}}</text>
+      <view class="month-switch tap-soft" bindtap="onNextMonth">›</view>
+    </view>
+  </view>
+
+  <!-- 手账本卡片 -->
+  <view class="calendar-card notebook-card animate-in">
+    <view class="card-header">
+      <text class="card-title">MY {{monthEn}}</text>
+      <text class="serif-label">month / {{month < 10 ? '0' + month : month}}</text>
+    </view>
+
+    <!-- 星期表头 -->
+    <view class="week-row">
+      <view class="week-cell" wx:for="{{weekHeaders}}" wx:key="en">
+        <text class="week-cn">{{item.cn}}</text>
+        <text class="week-en serif-label">/ {{item.en}}</text>
+      </view>
+    </view>
+
+    <!-- 日历网格 -->
+    <view class="grid">
+      <view wx:for="{{cells}}" wx:key="key"
+        class="day-cell tap-soft {{item.current ? '' : 'other'}}"
+        data-key="{{item.key}}" data-current="{{item.current}}"
+        bindtap="onSelectDay">
+        <text class="day-num">{{item.month < 10 ? '0' + item.month : item.month}}/{{item.day < 10 ? '0' + item.day : item.day}}</text>
+        <view class="sticker" wx:if="{{diaries[item.key] && diaries[item.key].mood}}">
+          <mood-icon moodId="{{diaries[item.key].mood}}" size="56"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-footer">
+      <text class="footer-left">MY</text>
+      <view class="dashed-divider footer-line"></view>
+      <text class="footer-right">MEMORIES</text>
+    </view>
+
+    <text class="tiny-logo">tiny type</text>
+  </view>
+
+  <!-- 全局导航 -->
+  <view class="bottom-nav" style="padding-bottom:calc(24rpx + env(safe-area-inset-bottom));">
+    <global-nav year="{{year}}" month="{{month}}" bind:refresh="onNavRefresh"/>
+  </view>
+</view>

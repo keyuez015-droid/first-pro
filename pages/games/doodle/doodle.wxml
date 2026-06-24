@@ -1,0 +1,32 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="top-title">随心涂鸦</text>
+      <view class="save-btn tap-soft" bindtap="onSave">保存</view>
+    </view>
+  </view>
+
+  <view class="canvas-wrap notebook-card">
+    <canvas type="2d" id="doodleCanvas" class="doodle-canvas"
+      bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"/>
+  </view>
+
+  <view class="toolbar">
+    <view class="brush-row">
+      <view class="brush-btn tap-soft {{brush === 'pencil' ? 'active' : ''}}"
+        data-brush="pencil" bindtap="setBrush">铅笔</view>
+      <view class="brush-btn tap-soft {{brush === 'crayon' ? 'active' : ''}}"
+        data-brush="crayon" bindtap="setBrush">蜡笔</view>
+      <view class="brush-btn tap-soft clear" bindtap="onClear">清空</view>
+    </view>
+    <scroll-view scroll-x class="color-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="color-list">
+        <view wx:for="{{colors}}" wx:key="*this"
+          class="color-dot tap-soft {{activeColor === item ? 'active' : ''}}"
+          style="background:{{item}}"
+          data-color="{{item}}" bindtap="setColor"/>
+      </view>
+    </scroll-view>
+  </view>
+</view>

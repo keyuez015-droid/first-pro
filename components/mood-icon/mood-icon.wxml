@@ -1,0 +1,3 @@
+<view class="mood-wrap {{highlight ? 'highlight' : ''}}" style="width:{{size}}rpx;height:{{size}}rpx;">
+  <canvas type="2d" id="moodCanvas" class="mood-canvas" style="width:{{size}}rpx;height:{{size}}rpx;"></canvas>
+</view>

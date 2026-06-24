@@ -1,0 +1,39 @@
+.page { min-height: 100vh; }
+
+.top-bar { background: linear-gradient(180deg, #F5EDD8 0%, transparent 100%); }
+.top-inner { display: flex; align-items: center; padding: 16rpx 32rpx 24rpx; }
+.back { font-size: 48rpx; color: var(--color-ink-light); width: 60rpx; }
+.top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
+.spacer { width: 60rpx; }
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24rpx;
+  padding: 24rpx 32rpx;
+}
+
+.game-card {
+  padding: 32rpx 24rpx 32rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.game-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 3rpx solid var(--color-ink);
+  opacity: 0.7;
+}
+
+.game-title {
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+}
+
+.game-desc {
+  font-size: 22rpx;
+  color: var(--color-ink-light);
+}

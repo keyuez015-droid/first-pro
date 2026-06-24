@@ -1,0 +1,107 @@
+/** 全局设计令牌 · 中式极简拙趣松弛风 */
+page {
+  --color-cream: #F7F2EA;
+  --color-kraft: #EDE4D3;
+  --color-paper: #FDFAF5;
+  --color-tea: #C4A882;
+  --color-tea-light: #D9C9B0;
+  --color-mist: #A8BCC8;
+  --color-pink: #E8C4C0;
+  --color-ink: #4A4540;
+  --color-ink-light: #8A8278;
+  --color-shadow: rgba(74, 69, 64, 0.08);
+  --radius-lg: 32rpx;
+  --radius-md: 20rpx;
+  --radius-sm: 12rpx;
+  --font-hand: -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-serif: Georgia, 'Songti SC', 'STSong', serif;
+  --spacing-page: 40rpx;
+  --transition-slow: 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+
+  font-family: var(--font-hand);
+  font-weight: 300;
+  color: var(--color-ink);
+  background: var(--color-cream);
+  box-sizing: border-box;
+}
+
+page.theme-cool {
+  --color-cream: #EEF2F0;
+  --color-kraft: #D8E0DC;
+  --color-paper: #F5F8F6;
+}
+
+page.font-small { font-size: 26rpx; }
+page.font-medium { font-size: 28rpx; }
+page.font-large { font-size: 32rpx; }
+
+.paper-bg {
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(196,168,130,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168,188,200,0.05) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 3rpx, rgba(74,69,64,0.015) 3rpx, rgba(74,69,64,0.015) 4rpx);
+}
+
+.notebook-card {
+  background: var(--color-paper);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8rpx 40rpx var(--color-shadow), inset 0 0 0 2rpx rgba(196,168,130,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.notebook-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 16rpx;
+  background: linear-gradient(90deg, #8B7355 0%, #A89070 40%, #8B7355 100%);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  opacity: 0.35;
+}
+
+.dashed-divider {
+  border: none;
+  height: 2rpx;
+  background: repeating-linear-gradient(90deg, var(--color-tea-light) 0, var(--color-tea-light) 8rpx, transparent 8rpx, transparent 16rpx);
+  opacity: 0.5;
+  margin: 24rpx 0;
+}
+
+.tap-soft {
+  transition: transform var(--transition-slow);
+}
+.tap-soft:active {
+  transform: scale(0.96);
+}
+
+.serif-label {
+  font-family: var(--font-serif);
+  font-size: 22rpx;
+  color: var(--color-ink-light);
+  letter-spacing: 2rpx;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeUp 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}

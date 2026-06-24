@@ -1,19 +1,34 @@
-// app.js
-App({
-  onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+const storage = require('./utils/storage')
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+App({
+  globalData: {
+    selectedDate: '',
+    viewYear: 0,
+    viewMonth: 0,
+    settings: storage.getSettings()
+  },
+
+  onLaunch() {
+    const settings = storage.getSettings()
+    this.applySettings(settings)
+
+    wx.onAppShow(() => {
+      this.globalData.settings = storage.getSettings()
     })
   },
-  globalData: {
-    userInfo: null
+
+  applySettings(settings) {
+    this.globalData.settings = settings
+    const pages = getCurrentPages()
+    const page = pages[pages.length - 1]
+    if (page && page.setData) {
+      page.setData({ settings })
+    }
+  },
+
+  refreshSettings() {
+    const settings = storage.getSettings()
+    this.applySettings(settings)
+    return settings
   }
 })

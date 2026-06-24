@@ -1,0 +1,76 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar { background: linear-gradient(180deg, #F5EDD8 0%, transparent 100%); }
+.top-inner { display: flex; align-items: center; padding: 16rpx 32rpx 24rpx; }
+.back { font-size: 48rpx; color: var(--color-ink-light); width: 60rpx; }
+.top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
+.save-btn { font-size: 26rpx; color: var(--color-tea); letter-spacing: 2rpx; }
+
+.canvas-wrap {
+  flex: 1;
+  margin: 0 32rpx;
+  padding: 16rpx 16rpx 16rpx 32rpx;
+  min-height: 60vh;
+}
+
+.doodle-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 55vh;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.toolbar {
+  padding: 16rpx 32rpx calc(24rpx + env(safe-area-inset-bottom));
+}
+
+.brush-row {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.brush-btn {
+  padding: 12rpx 28rpx;
+  border-radius: 999rpx;
+  border: 2rpx dashed var(--color-tea-light);
+  font-size: 24rpx;
+  color: var(--color-ink-light);
+}
+
+.brush-btn.active {
+  background: var(--color-kraft);
+  border-style: solid;
+  color: var(--color-ink);
+}
+
+.brush-btn.clear {
+  margin-left: auto;
+  border-color: rgba(212,165,165,0.5);
+}
+
+.color-scroll { white-space: nowrap; }
+
+.color-list {
+  display: inline-flex;
+  gap: 16rpx;
+  padding: 8rpx 0;
+}
+
+.color-dot {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  border: 3rpx solid transparent;
+  display: inline-block;
+}
+
+.color-dot.active {
+  border-color: var(--color-ink);
+  transform: scale(1.15);
+}

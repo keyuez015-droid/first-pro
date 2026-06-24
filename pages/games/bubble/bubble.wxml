@@ -1,0 +1,14 @@
+<view class="page bubble-page">
+  <view class="top-overlay" style="padding-top:{{statusBarHeight}}px;">
+    <view class="back tap-soft" bindtap="onBack">‹</view>
+    <text class="score">得分 {{score}}</text>
+  </view>
+
+  <canvas type="2d" id="bubbleCanvas" class="bubble-canvas"
+    bindtouchstart="onTouchStart" bindtouchend="onTouchEnd"/>
+
+  <view wx:if="{{showFeedback}}" class="feedback" style="left:{{feedbackX}}px;top:{{feedbackY}}px;">{{feedback}}</view>
+  <view wx:if="{{encourage}}" class="encourage animate-in">{{encourage}}</view>
+
+  <view class="hint">按住泡泡 0.5~1.5 秒 · 完美得分</view>
+</view>

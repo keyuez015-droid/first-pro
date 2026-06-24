@@ -1,0 +1,151 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 160rpx;
+}
+
+.top-bar {
+  background: linear-gradient(180deg, #F5EDD8 0%, transparent 100%);
+}
+
+.top-inner {
+  display: flex;
+  align-items: center;
+  padding: 16rpx 32rpx 24rpx;
+}
+
+.back {
+  font-size: 48rpx;
+  color: var(--color-ink-light);
+  width: 60rpx;
+}
+
+.top-title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  letter-spacing: 4rpx;
+}
+
+.spacer { width: 60rpx; }
+
+.notes-card {
+  margin: 16rpx 32rpx;
+  padding: 40rpx 32rpx 48rpx 48rpx;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32rpx;
+  padding-right: 16rpx;
+}
+
+.notes-title {
+  font-family: var(--font-serif);
+  font-size: 52rpx;
+  font-weight: 400;
+  color: var(--color-ink);
+}
+
+.notes-scroll {
+  flex: 1;
+  max-height: 60vh;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 0;
+  color: var(--color-ink-light);
+  gap: 16rpx;
+}
+
+.empty-hint {
+  font-size: 24rpx;
+  opacity: 0.7;
+}
+
+.entry {
+  padding: 24rpx 16rpx 24rpx 0;
+}
+
+.entry-head {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+}
+
+.entry-date {
+  font-family: var(--font-serif);
+  font-size: 26rpx;
+  color: var(--color-ink-light);
+}
+
+.entry-text {
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: var(--color-ink);
+  font-weight: 300;
+  white-space: pre-wrap;
+}
+
+.entry-images {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 16rpx;
+}
+
+.entry-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: var(--radius-md);
+}
+
+.notes-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 32rpx;
+  padding-right: 16rpx;
+}
+
+.tiny-logo {
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  color: var(--color-ink-light);
+  font-style: italic;
+}
+
+.elephant-deco {
+  width: 64rpx;
+  height: 64rpx;
+  border: 3rpx solid var(--color-ink);
+  border-radius: 50%;
+  background: var(--color-pink);
+  opacity: 0.6;
+  position: relative;
+}
+.elephant-deco::before {
+  content: '';
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  border: 3rpx solid var(--color-ink);
+  border-radius: 50%;
+  bottom: -8rpx;
+  left: -8rpx;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}

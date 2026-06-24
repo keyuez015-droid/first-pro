@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "global-nav": "/components/global-nav/global-nav",
+    "mood-icon": "/components/mood-icon/mood-icon"
+  }
+}

@@ -1,0 +1,31 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="top-title">白噪音</text>
+      <view class="spacer"></view>
+    </view>
+  </view>
+
+  <view class="player-card notebook-card animate-in">
+    <view class="sound-list">
+      <view wx:for="{{sounds}}" wx:key="id"
+        class="sound-item tap-soft {{activeId === item.id && playing ? 'active' : ''}}"
+        data-id="{{item.id}}" bindtap="onSelect">
+        <text class="sound-emoji">{{item.emoji}}</text>
+        <text class="sound-label">{{item.label}}</text>
+        <view class="play-dot" wx:if="{{activeId === item.id && playing}}"></view>
+      </view>
+    </view>
+
+    <view class="dashed-divider"></view>
+
+    <view class="volume-row">
+      <text class="vol-label">音量</text>
+      <slider min="0" max="100" value="{{volume * 100}}" activeColor="#C4A882"
+        backgroundColor="#EDE4D3" block-size="20" bindchange="onVolume"/>
+    </view>
+
+    <view class="stop-btn tap-soft" bindtap="onStop" wx:if="{{playing}}">停止播放</view>
+  </view>
+</view>

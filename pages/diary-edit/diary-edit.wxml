@@ -1,0 +1,51 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="date-label">{{displayDate}}</text>
+      <view class="submit-btn tap-soft" bindtap="onSubmit">好了</view>
+    </view>
+  </view>
+
+  <view class="edit-card notebook-card animate-in">
+    <view class="paper-area">
+      <textarea
+        class="paper-input"
+        placeholder="写点什么吧"
+        placeholder-class="placeholder"
+        value="{{text}}"
+        bindinput="onInput"
+        maxlength="2000"
+        auto-height
+      />
+      <view class="paper-lines"></view>
+      <view class="cat-deco">
+        <view class="cat-body"></view>
+        <view class="cat-ear left"></view>
+        <view class="cat-ear right"></view>
+        <view class="cat-tail"></view>
+      </view>
+    </view>
+
+    <!-- 配图 -->
+    <view class="image-row" wx:if="{{images.length}}">
+      <image wx:for="{{images}}" wx:key="*this" src="{{item}}" mode="aspectFill" class="thumb"/>
+    </view>
+    <view class="add-image tap-soft" bindtap="onAddImage" wx:if="{{images.length < 3}}">+ 插入图片</view>
+  </view>
+
+  <!-- 心情选择 -->
+  <view class="mood-bar">
+    <scroll-view scroll-x class="mood-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="mood-list">
+        <view wx:for="{{moods}}" wx:key="id"
+          class="mood-item tap-soft"
+          data-id="{{item.id}}"
+          bindtap="onSelectMood">
+          <mood-icon moodId="{{item.id}}" size="72" highlight="{{mood === item.id}}"/>
+          <text class="mood-label {{mood === item.id ? 'active' : ''}}">{{item.label}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

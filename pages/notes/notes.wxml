@@ -1,0 +1,48 @@
+<view class="page paper-bg">
+  <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
+    <view class="top-inner">
+      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <text class="top-title">{{headerText}}</text>
+      <view class="spacer"></view>
+    </view>
+  </view>
+
+  <view class="notes-card notebook-card animate-in">
+    <view class="card-header">
+      <text class="notes-title">Notes</text>
+      <text class="serif-label">month / {{month < 10 ? '0' + month : month}}</text>
+    </view>
+
+    <scroll-view scroll-y class="notes-scroll" enhanced show-scrollbar="{{false}}">
+      <view wx:if="{{entries.length === 0}}" class="empty">
+        <text>这个月还没有记录呢</text>
+        <text class="empty-hint">点击日历上的日期开始写日记吧</text>
+      </view>
+
+      <view wx:for="{{entries}}" wx:key="date"
+        class="entry tap-soft"
+        data-date="{{item.date}}"
+        bindtap="onTapEntry">
+        <view class="entry-head">
+          <text class="entry-date">{{item.shortDate}}</text>
+          <mood-icon wx:if="{{item.mood}}" moodId="{{item.mood}}" size="48"/>
+        </view>
+        <text class="entry-text" wx:if="{{item.text}}">{{item.text}}</text>
+        <view class="entry-images" wx:if="{{item.images.length}}">
+          <image wx:for="{{item.images}}" wx:for-item="img" wx:key="*this"
+            src="{{img}}" mode="aspectFill" class="entry-img"/>
+        </view>
+        <view class="dashed-divider" wx:if="{{index < entries.length - 1}}"></view>
+      </view>
+    </scroll-view>
+
+    <view class="notes-footer">
+      <text class="tiny-logo">tinytype</text>
+      <view class="elephant-deco"></view>
+    </view>
+  </view>
+
+  <view class="bottom-nav" style="padding-bottom:calc(24rpx + env(safe-area-inset-bottom));">
+    <global-nav year="{{year}}" month="{{month}}" bind:refresh="onNavRefresh"/>
+  </view>
+</view>
