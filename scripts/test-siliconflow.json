@@ -1,0 +1,8 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "messages": [
+    { "role": "user", "content": "你好，请用一句话回复" }
+  ],
+  "temperature": 0.7,
+  "max_tokens": 64
+}

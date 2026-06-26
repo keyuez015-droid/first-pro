@@ -1,15 +1,20 @@
 <view class="page bubble-page">
-  <back-btn theme="light" />
-
-  <view class="top-overlay" style="padding-top:{{statusBarHeight}}px;">
-    <text class="score">得分 {{score}}</text>
-  </view>
-
   <canvas type="2d" id="bubbleCanvas" class="bubble-canvas"
     bindtouchstart="onTouchStart" bindtouchend="onTouchEnd"/>
+
+  <!-- cover-view 须紧接 canvas 之后，才能浮于原生层之上 -->
+  <cover-view
+    class="canvas-back-btn"
+    style="top: {{backTop}}px; left: 12px; width: 32px; height: 32px; line-height: 28px; border-radius: 16px; background-color: rgba(253,250,245,0.92); color: #4A4540; font-size: 22px; text-align: center;"
+    bindtap="onBack"
+  >‹</cover-view>
+
+  <cover-view class="top-overlay-cover" style="padding-top:{{statusBarHeight}}px;">
+    <cover-view class="score-cover">得分 {{score}}</cover-view>
+  </cover-view>
 
   <view wx:if="{{showFeedback}}" class="feedback" style="left:{{feedbackX}}px;top:{{feedbackY}}px;">{{feedback}}</view>
   <view wx:if="{{encourage}}" class="encourage animate-in">{{encourage}}</view>
 
-  <view class="hint">按住泡泡 0.5~1.5 秒 · 完美得分</view>
+  <cover-view class="hint-cover">按住泡泡 0.5~1.5 秒 · 完美得分</cover-view>
 </view>

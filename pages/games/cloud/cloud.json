@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "back-btn": "/components/back-btn/back-btn"
-  }
+    "cloud-scene": "/components/cloud-scene/cloud-scene"
+  },
+  "disableScroll": true
 }

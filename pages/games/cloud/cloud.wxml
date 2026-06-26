@@ -1,10 +1,15 @@
 <view class="page">
-  <back-btn />
+  <cloud-scene id="cloudScene" />
 
-  <view class="top-overlay" style="padding-top:{{statusBarHeight}}px;">
-    <text class="title">捏云朵</text>
-  </view>
-  <canvas type="2d" id="cloudCanvas" class="full-canvas"
-    bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"/>
-  <view class="hint">拖拽揉捏 · 松手回弹</view>
+  <cover-view
+    class="canvas-back-btn"
+    style="top: {{backTop}}px; left: 12px; width: 32px; height: 32px; line-height: 28px; border-radius: 16px; background-color: rgba(253,250,245,0.92); color: #4A4540; font-size: 22px; text-align: center;"
+    bindtap="onBack"
+  >‹</cover-view>
+
+  <cover-view class="top-overlay-cover" style="padding-top:{{statusBarHeight}}px;">
+    <cover-view class="title-cover">捏云朵</cover-view>
+  </cover-view>
+
+  <cover-view class="hint-cover">单指旋转 · 双指缩放平移 · 揉捏回弹</cover-view>
 </view>

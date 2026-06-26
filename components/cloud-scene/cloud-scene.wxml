@@ -1,0 +1,22 @@
+<view class="cloud-scene">
+  <view wx:if="{{loading}}" class="loading-wrap">
+    <view class="loading-cloud">
+      <view class="loading-puff p1"></view>
+      <view class="loading-puff p2"></view>
+      <view class="loading-puff p3"></view>
+    </view>
+    <text class="loading-text">云朵飘来中…</text>
+  </view>
+
+  <view wx:if="{{loadFailed && !loading}}" class="fallback-tip">已使用默认云朵</view>
+
+  <canvas
+    type="2d"
+    id="cloudCanvas"
+    class="cloud-canvas"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+    bindtouchcancel="onTouchCancel"
+  ></canvas>
+</view>

@@ -3,6 +3,11 @@ project.private.config.json
 
 # 依赖
 node_modules/
+miniprogram_npm/
+
+# 本地 API 密钥（勿提交）
+.env
+.env.local
 
 # 系统文件
 .DS_Store

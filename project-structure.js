@@ -10,7 +10,8 @@
  * pages/games/whitenoise - 白噪音
  * pages/games/doodle  - 随心涂鸦
  *
- * components/back-btn     - 全局左上角返回（首页隐藏）
+ * components/cloud-scene  - 3D 捏云朵 Canvas 2D 场景（可复用，无需 npm）
+ * config/cloud-animation.js - 云朵动效参数配置
  * components/mood-icon   - Canvas 手绘小动物情绪图标
  *
  * utils/storage.js  - LocalStorage 日记/设置/涂鸦

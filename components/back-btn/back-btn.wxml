@@ -1,5 +1,5 @@
 <view
-  wx:if="{{visible}}"
+  wx:if="{{visible && !nativeCover}}"
   class="back-btn tap-soft theme-{{theme}}"
   style="top: calc({{statusBarHeight}}px + 12rpx);"
   bindtap="onBack"
@@ -7,3 +7,11 @@
 >
   <view class="arrow"></view>
 </view>
+
+<!-- canvas 等原生组件上方必须用 cover-view，样式与其他页一致 -->
+<cover-view
+  wx:if="{{visible && nativeCover}}"
+  class="back-btn-cover"
+  style="top: {{coverTop}}px;"
+  bindtap="onBack"
+>‹</cover-view>

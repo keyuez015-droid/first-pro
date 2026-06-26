@@ -9,10 +9,12 @@ const BUBBLE_TYPES = [
 ]
 
 const ENCOURAGE = ['心流爆炸 ✨', '完美！', '好专注~', '慢慢来', '你很棒', '呼吸...']
+const { goBack, getBackTop } = require('../../../utils/nav')
 
 Page({
   data: {
     statusBarHeight: 44,
+    backTop: 50,
     score: 0,
     perfectStreak: 0,
     feedback: '',
@@ -33,7 +35,10 @@ Page({
 
   onLoad() {
     const info = wx.getWindowInfo()
-    this.setData({ statusBarHeight: info.statusBarHeight || 44 })
+    this.setData({
+      statusBarHeight: info.statusBarHeight || 44,
+      backTop: getBackTop()
+    })
   },
 
   onReady() {
@@ -182,5 +187,9 @@ Page({
     })
     setTimeout(() => this.setData({ showFeedback: false }), 800)
     this.activeBubble = null
+  },
+
+  onBack() {
+    goBack()
   }
 })

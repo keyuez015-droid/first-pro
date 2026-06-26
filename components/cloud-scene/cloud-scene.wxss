@@ -1,0 +1,71 @@
+.cloud-scene {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #EEF2F0 0%, #D8E0DC 100%);
+}
+
+.gl-canvas,
+.cloud-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loading-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #EEF2F0 0%, #D8E0DC 100%);
+}
+
+.loading-cloud {
+  position: relative;
+  width: 160rpx;
+  height: 100rpx;
+  animation: loadingFloat 2.4s ease-in-out infinite;
+}
+
+.loading-puff {
+  position: absolute;
+  background: rgba(248, 252, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 4rpx 20rpx rgba(168, 188, 200, 0.25);
+}
+
+.loading-puff.p1 { width: 56rpx; height: 56rpx; left: 0; top: 28rpx; }
+.loading-puff.p2 { width: 72rpx; height: 72rpx; left: 44rpx; top: 8rpx; }
+.loading-puff.p3 { width: 48rpx; height: 48rpx; left: 100rpx; top: 32rpx; }
+
+.loading-text {
+  margin-top: 32rpx;
+  font-size: 26rpx;
+  color: #8A8278;
+  letter-spacing: 4rpx;
+}
+
+.fallback-tip {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + 100px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 22rpx;
+  color: #8A8278;
+  opacity: 0.6;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes loadingFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16rpx); }
+}

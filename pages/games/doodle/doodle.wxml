@@ -1,5 +1,5 @@
 <view class="page paper-bg">
-  <back-btn />
+  <back-btn nativeCover="{{true}}" />
 
   <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
     <view class="top-inner">

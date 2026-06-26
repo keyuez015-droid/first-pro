@@ -105,3 +105,20 @@ page.font-large { font-size: 32rpx; }
 .animate-in {
   animation: fadeUp 0.6s cubic-bezier(0.34, 1.2, 0.64, 1) both;
 }
+
+/* canvas 页专用：cover-view 必须写在页面 wxml 中、canvas 之后 */
+.canvas-back-btn {
+  position: fixed;
+  left: 12px;
+  z-index: 9999;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  border-radius: 16px;
+  background-color: rgba(253, 250, 245, 0.92);
+  color: #4A4540;
+  font-size: 22px;
+  text-align: center;
+  padding-left: 2px;
+  box-sizing: border-box;
+}
