@@ -10,7 +10,7 @@
  * pages/games/whitenoise - 白噪音
  * pages/games/doodle  - 随心涂鸦
  *
- * components/global-nav  - 顶部四入口导航 + 设置弹窗
+ * components/back-btn     - 全局左上角返回（首页隐藏）
  * components/mood-icon   - Canvas 手绘小动物情绪图标
  *
  * utils/storage.js  - LocalStorage 日记/设置/涂鸦

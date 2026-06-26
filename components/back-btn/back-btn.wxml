@@ -1,0 +1,9 @@
+<view
+  wx:if="{{visible}}"
+  class="back-btn tap-soft theme-{{theme}}"
+  style="top: calc({{statusBarHeight}}px + 12rpx);"
+  bindtap="onBack"
+  hover-class="back-btn-hover"
+>
+  <view class="arrow"></view>
+</view>

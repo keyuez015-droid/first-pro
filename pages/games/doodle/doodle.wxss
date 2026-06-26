@@ -6,7 +6,7 @@
 
 .top-bar { background: linear-gradient(180deg, #F5EDD8 0%, transparent 100%); }
 .top-inner { display: flex; align-items: center; padding: 16rpx 32rpx 24rpx; }
-.back { font-size: 48rpx; color: var(--color-ink-light); width: 60rpx; }
+.spacer { width: 60rpx; }
 .top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
 .save-btn { font-size: 26rpx; color: var(--color-tea); letter-spacing: 2rpx; }
 

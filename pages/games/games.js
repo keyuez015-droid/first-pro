@@ -16,9 +16,5 @@ Page({
 
   onGame(e) {
     wx.navigateTo({ url: e.currentTarget.dataset.path })
-  },
-
-  onBack() {
-    wx.navigateBack()
   }
 })

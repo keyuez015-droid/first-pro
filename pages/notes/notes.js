@@ -42,9 +42,6 @@ Page({
     this.setData({ entries })
   },
 
-  onBack() {
-    wx.navigateBack({ fail: () => wx.reLaunch({ url: '/pages/calendar/calendar' }) })
-  },
 
   onTapEntry(e) {
     const date = e.currentTarget.dataset.date

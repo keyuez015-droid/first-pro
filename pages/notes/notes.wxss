@@ -13,11 +13,7 @@
   padding: 16rpx 32rpx 24rpx;
 }
 
-.back {
-  font-size: 48rpx;
-  color: var(--color-ink-light);
-  width: 60rpx;
-}
+.spacer { width: 60rpx; }
 
 .top-title {
   flex: 1;

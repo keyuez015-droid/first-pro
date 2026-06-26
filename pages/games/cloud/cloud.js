@@ -100,7 +100,5 @@ Page({
 
   onTouchEnd() {
     this.blobs.forEach(b => { b.squash = 0.5 })
-  },
-
-  onBack() { wx.navigateBack() }
+  }
 })

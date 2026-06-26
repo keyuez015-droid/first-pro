@@ -1,6 +1,7 @@
 <view class="page">
+  <back-btn />
+
   <view class="top-overlay" style="padding-top:{{statusBarHeight}}px;">
-    <view class="back tap-soft" bindtap="onBack">‹</view>
     <text class="title">捏云朵</text>
   </view>
   <canvas type="2d" id="cloudCanvas" class="full-canvas"

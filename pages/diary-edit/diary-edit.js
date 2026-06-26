@@ -65,9 +65,5 @@ Page({
       const { year, month } = this.data
       wx.redirectTo({ url: `/pages/notes/notes?year=${year}&month=${month}` })
     }, 600)
-  },
-
-  onBack() {
-    wx.navigateBack()
   }
 })

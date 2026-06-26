@@ -1,6 +1,7 @@
 <view class="page bubble-page">
+  <back-btn theme="light" />
+
   <view class="top-overlay" style="padding-top:{{statusBarHeight}}px;">
-    <view class="back tap-soft" bindtap="onBack">‹</view>
     <text class="score">得分 {{score}}</text>
   </view>
 

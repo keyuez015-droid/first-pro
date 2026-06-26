@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "back-btn": "/components/back-btn/back-btn",
     "mood-icon": "/components/mood-icon/mood-icon"
   }
 }

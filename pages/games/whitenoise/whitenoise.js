@@ -62,7 +62,5 @@ Page({
   onStop() {
     this.audio.stop()
     this.setData({ playing: false, activeId: '' })
-  },
-
-  onBack() { wx.navigateBack() }
+  }
 })

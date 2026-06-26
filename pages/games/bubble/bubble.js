@@ -182,7 +182,5 @@ Page({
     })
     setTimeout(() => this.setData({ showFeedback: false }), 800)
     this.activeBubble = null
-  },
-
-  onBack() { wx.navigateBack() }
+  }
 })

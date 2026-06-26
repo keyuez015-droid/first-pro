@@ -208,9 +208,5 @@ Page({
       ctx.stroke()
       ctx.setLineDash([])
     })
-  },
-
-  onBack() {
-    wx.navigateBack()
   }
 })

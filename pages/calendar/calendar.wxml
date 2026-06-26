@@ -1,4 +1,7 @@
 <view class="page paper-bg font-{{settings.fontSize || 'medium'}} theme-{{settings.theme === 'cool' ? 'cool' : ''}}">
+  <!-- 首页：隐藏返回按钮 -->
+  <back-btn isHome="{{true}}" />
+
   <!-- 顶部栏 -->
   <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
     <view class="top-inner">

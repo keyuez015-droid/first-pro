@@ -13,9 +13,8 @@
   padding: 16rpx 32rpx 24rpx;
 }
 
-.back { font-size: 48rpx; color: var(--color-ink-light); width: 60rpx; }
-.top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
 .spacer { width: 60rpx; }
+.top-title { flex: 1; text-align: center; font-size: 32rpx; letter-spacing: 4rpx; }
 
 .filter-row {
   display: flex;

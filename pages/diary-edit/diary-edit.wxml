@@ -1,7 +1,9 @@
 <view class="page paper-bg">
+  <back-btn />
+
   <view class="top-bar" style="padding-top:{{statusBarHeight}}px;">
     <view class="top-inner">
-      <view class="back tap-soft" bindtap="onBack">‹</view>
+      <view class="spacer"></view>
       <text class="date-label">{{displayDate}}</text>
       <view class="submit-btn tap-soft" bindtap="onSubmit">好了</view>
     </view>

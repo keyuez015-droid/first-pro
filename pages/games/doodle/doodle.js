@@ -112,7 +112,5 @@ Page({
         })
       }
     })
-  },
-
-  onBack() { wx.navigateBack() }
+  }
 })
